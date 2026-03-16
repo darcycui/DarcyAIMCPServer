@@ -1,7 +1,7 @@
 from mcp.server import FastMCP
 
 # 创建 mcp 对象
-mcp = FastMCP()
+mcp = FastMCP("weather")
 
 
 # 自定义工具(函数)
@@ -21,6 +21,10 @@ def get_forecast(city: str) -> str:
 # 日志记录工具 mcp_logger.py (https://github.com/MarkTechStation/VideoCode/)
 # 用来截获mcp client和mcp server之间的通信（仅限于stdio方式） 保存到mcp_io.log日志文件
 if __name__ == '__main__':
-    print("MCP 服务运行中...")
-    mcp.run(transport="stdio")
-    print("MCP 结束")
+    try:
+        print("MCP Server 运行中...")
+        mcp.run(transport="stdio")  # 注意这里本地MCP使用 stdio 协议
+        print("MCP Server 结束")
+    except Exception as e:
+        print(e)
+        pass

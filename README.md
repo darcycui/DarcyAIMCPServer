@@ -33,6 +33,9 @@ VSCode + Cline插件
 }
 ```
 
+## 运行结果
+![运行结果](MCP-Server运行效果.png)
+
 ## 参考文章
 
 [马克的技术工坊Github](https://github.com/MarkTechStation/VideoCode/)

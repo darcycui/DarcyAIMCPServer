@@ -1,3 +1,5 @@
+import sys
+
 from mcp.server import FastMCP
 
 from darcycui_mcp.https.http_manager import forecast
@@ -23,9 +25,10 @@ def get_forecast(city: str) -> str:
 # 初始化 MCP 服务
 def main():
     try:
-        print("darcycui weather MCP Server 运行中...")
+        # 将日志输出到 stderr 而不是 stdout
+        print("darcycui weather MCP Server 运行中...", file=sys.stderr)
         mcp.run(transport="stdio")  # 注意这里本地MCP使用 stdio 协议
-        print("darcycui weather MCP Server 结束")
+        # print("darcycui weather MCP Server 结束")
     except Exception as e:
         print(e)
         pass

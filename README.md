@@ -12,17 +12,29 @@ Python语言，基于 mcp 库实现的一个 MCP-Server。
 
 1. 如果未安装 uv工具，先执行一键安装脚本安装
 
-    ```bash
-    # Linux/Mac 脚本
-    sudo curl -fsSL https://openclaw.ai/install.sh | bash
-    
-    # Windows 脚本
-    iwr -useb https://openclaw.ai/install.ps1 | iex
-    ```
+```bash
+    # 在 macOS 上安装
+    # 推荐使用 Homebrew 安装：
+    brew install uv
+    # 或者使用官方安装脚本：
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+    # 在 Linux 上安装
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+    # 在 Windows 上安装
+    # 使用 Winget：
+    winget install uv
+    # 或者使用官方安装脚本（PowerShell）：
+    irm https://astral.sh/uv/install.ps1 | iex
+
+    # 安装完成后，验证是否成功：
+    uv --version
+```
 
 2. 添加如下 mcpServers 配置
 
-    ```json
+```json
     {
       "mcpServers": {
         "weather": {
@@ -37,13 +49,14 @@ Python语言，基于 mcp 库实现的一个 MCP-Server。
         }
       }
     }
+```
 
 ### 本地使用
 1. clone项目到本地 path
 2. 添加如下配置 
 3. 注意 path 替换为你的本地路径
 4. 注意 路径分隔符，Linux/Mac 使用/分隔符, Windows 使用\\分隔符
-    ```json
+```json
     {
       "mcpServers": {
         "weather": {
@@ -61,7 +74,7 @@ Python语言，基于 mcp 库实现的一个 MCP-Server。
         }
       }
     }
-    ```
+```
 
 
 ## 运行结果
